@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situs Pribadi Elegan - [Nama Anda]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variabel CSS untuk kemudahan pengaturan warna */
+        :root {
+            --primary-color: #6a0572; /* Ungu gelap */
+            --secondary-color: #ab3a9f; /* Ungu lebih cerah */
+            --text-color: #f0f0f0;
+            --background-color: #1a1a2e; /* Biru gelap keunguan */
+            --card-background: #2a2a4a;
+            --button-hover: #e0b0ff;
+        }
+
+        /* Reset dan Dasar */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Animasi Umum */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.1); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        header .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 0 15px var(--secondary-color);
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        header h1 {
+            margin: 15px 0 5px;
+            font-size: 2.5em;
+            color: var(--text-color);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: var(--text-color);
+            animation: fadeIn 1.4s ease-out;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.6s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Untuk responsif pada layar kecil */
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            display: block; /* Agar padding dan background bekerja */
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+            background-color: var(--text-color);
+            transform: translateY(-3px); /* Efek melayang saat hover */
+        }
+
+        /* Bagian Utama */
+        main .section {
+            background-color: var(--card-background);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0; /* Awalnya sembunyikan untuk animasi */
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards; /* Animasi fade in */
+        }
+
+        /* Delay animasi untuk setiap section */
+        main .section:nth-child(1) { animation-delay: 1.8s; }
+        main .section:nth-child(2) { animation-delay: 2.2s; }
+        main .section:nth-child(3) { animation-delay: 2.6s; }
+
+        main .section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        /* Gaya untuk Daftar Keahlian */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--primary-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px) scale(1.05); /* Efek melayang dan sedikit membesar */
+            background-color: var(--secondary-color);
+        }
+
+        /* Gaya untuk Tombol Aksi */
+        .action-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-button:hover {
+            background-color: var(--button-hover);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+            animation-delay: 3s; /* Delay setelah semua section muncul */
+            animation-fill-mode: forwards;
+        }
+
+        footer p {
+            margin: 0;
+            color: var(--text-color);
+            font-size: 0.9em;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--button-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Responsif Sederhana */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav ul li {
+                margin: 5px 10px;
+            }
+            main .section {
+                padding: 20px;
+            }
+            main .section h2 {
+                font-size: 1.5em;
+            }
+            .skills-list {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://via.placeholder.com/150/ab3a9f/f0f0f0?text=Profil" alt="Foto Profil" class="profile-img">
+            <h1>[Nama Lengkap Anda]</h1>
+            <p>Seorang [Bidang Anda, misal: Pengembang Web Pemula] yang Antusias</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="section">
+            <h2>Tentang Saya</h2>
+            <p>Halo! Saya [Nama Anda], seorang pelajar yang bersemangat dalam dunia teknologi dan pemrograman. Saya sedang dalam perjalanan untuk menguasai pengembangan web dan senang belajar hal-hal baru. Situs ini adalah salah satu proyek awal saya, dibuat untuk menampilkan perjalanan dan apa yang sudah saya pelajari.</p>
+            <p>Saya percaya bahwa teknologi memiliki kekuatan untuk mengubah dunia, dan saya ingin menjadi bagian dari perubahan itu. Mari terhubung dan berkolaborasi!</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Keahlian</h2>
+            <ul class="skills-list">
+                <li class="skill-item">HTML5</li>
+                <li class="skill-item">CSS3</li>
+                <li class="skill-item">JavaScript</li>
+                <li class="skill-item">Git & GitHub</li>
+                <li class="skill-item">Web Design</li>
+                <li class="skill-item">Problem Solving</li>
+            </ul>
+            <a href="#" class="action-button">Lihat Lebih Banyak</a>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Proyek</h2>
+            <p>Berikut adalah beberapa proyek kecil yang sedang atau sudah saya kerjakan:</p>
+            <ul>
+                <li>**[Nama Proyek 1]:** Deskripsi singkat tentang proyek ini.</li>
+                <li>**[Nama Proyek 2]:** Deskripsi singkat tentang proyek ini.</li>
+                <li>**[Nama Proyek 3]:** Deskripsi singkat tentang proyek ini.</li>
+            </ul>
+            <a href="https://github.com/[username_github_anda]?tab=repositories" target="_blank" class="action-button">Kunjungi GitHub Saya</a>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Kontak</h2>
+            <p>Tertarik untuk berkolaborasi atau sekadar menyapa? Jangan ragu untuk menghubungi saya!</p>
+            <p>Email: <a href="mailto:emailanda@example.com" class="action-button">Kirim Email</a></p>
+            <p>Atau temukan saya di media sosial:</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/[username_linkedin]" target="_blank" title="LinkedIn">
+                    <img src="https://img.icons8.com/ios-filled/50/f0f0f0/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://twitter.com/[username_twitter]" target="_blank" title="Twitter">
+                    <img src="https://img.icons8.com/ios-filled/50/f0f0f0/twitterx.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com/[username_instagram]" target="_blank" title="Instagram">
+                    <img src="https://img.icons8.com/ios-filled/50/f0f0f0/instagram-new--v1.png" alt="Instagram">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Dibuat dengan ❤️ oleh [Nama Anda] &copy; 2025.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi untuk setiap bagian (section) saat discroll ke tampilan
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 /* Animasi mulai saat 10% dari section terlihat */
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target); // Berhenti mengamati setelah animasi berjalan
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Contoh JavaScript sederhana untuk scroll halus ke bagian tertentu
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Ganti placeholder dengan data Anda
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ganti ini dengan nama dan bidang Anda
+            document.querySelector('header h1').textContent = '[Nama Lengkap Anda]';
+            document.querySelector('header p').textContent = 'Seorang [Bidang Anda, misal: Pengembang Web Pemula] yang Antusias';
+            document.querySelector('footer p').textContent = 'Dibuat dengan ❤️ oleh [Nama Anda] © 2025.';
+
+            // Ganti URL GitHub dan email Anda
+            document.querySelector('.action-button[href*="github.com"]').href = 'https://github.com/[username_github_anda]?tab=repositories';
+            document.querySelector('.action-button[href*="mailto"]').href = 'mailto:[email_anda]@example.com';
+
+            // Ganti URL media sosial Anda
+            document.querySelector('.social-links a[title="LinkedIn"]').href = 'https://linkedin.com/in/[username_linkedin]';
+            document.querySelector('.social-links a[title="Twitter"]').href = 'https://twitter.com/[username_twitter]';
+            document.querySelector('.social-links a[title="Instagram"]').href = 'https://instagram.com/[username_instagram]';
+
+            // Ganti URL gambar profil jika ada
+            // document.querySelector('.profile-img').src = 'URL_GAMBAR_PROFIL_ANDA.jpg';
+        });
+
+    </script>
+</body>
+</html>
