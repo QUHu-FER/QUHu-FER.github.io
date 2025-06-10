@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Pribadi Elegan - [Nama Anda]</title>
+    <title>Situs Pribadi Elegan - QUHu-FER</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Variabel CSS untuk kemudahan pengaturan warna */
@@ -131,6 +131,8 @@
         main .section:nth-child(1) { animation-delay: 1.8s; }
         main .section:nth-child(2) { animation-delay: 2.2s; }
         main .section:nth-child(3) { animation-delay: 2.6s; }
+        main .section:nth-child(4) { animation-delay: 3.0s; } /* Tambahkan delay untuk kontak */
+
 
         main .section h2 {
             color: var(--secondary-color);
@@ -193,7 +195,7 @@
             margin-top: 50px;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1s ease-out;
-            animation-delay: 3s; /* Delay setelah semua section muncul */
+            animation-delay: 3.4s; /* Sesuaikan delay */
             animation-fill-mode: forwards;
         }
 
@@ -205,18 +207,32 @@
 
         .social-links {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Jarak antar ikon */
         }
 
         .social-links a {
             color: var(--text-color);
-            font-size: 1.5em;
-            margin: 0 10px;
+            font-size: 1.5em; /* Ukuran ikon dasar */
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-links a:hover {
             color: var(--button-hover);
             transform: translateY(-3px);
+        }
+
+        .social-links img {
+            width: 40px; /* Ukuran gambar ikon */
+            height: 40px;
+            filter: brightness(0) invert(1); /* Membuat ikon putih */
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover img {
+            transform: scale(1.1); /* Efek membesar saat hover */
         }
 
         /* Responsif Sederhana */
@@ -239,6 +255,10 @@
             .skills-list {
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
+            .social-links img {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -258,9 +278,8 @@
 <body>
     <header>
         <div class="container">
-            <img src="https://via.placeholder.com/150/ab3a9f/f0f0f0?text=Profil" alt="Foto Profil" class="profile-img">
-            <h1>[Nama Lengkap Anda]</h1>
-            <p>Seorang [Bidang Anda, misal: Pengembang Web Pemula] yang Antusias</p>
+            <img src="https://avatars.githubusercontent.com/u/133474958?v=4" alt="Foto Profil" class="profile-img">
+            <h1>QUHu-FER</h1> <p>Seorang Pengembang Web Pemula yang Antusias</p>
         </div>
     </header>
 
@@ -278,7 +297,7 @@
     <main class="container">
         <section id="about" class="section">
             <h2>Tentang Saya</h2>
-            <p>Halo! Saya [Nama Anda], seorang pelajar yang bersemangat dalam dunia teknologi dan pemrograman. Saya sedang dalam perjalanan untuk menguasai pengembangan web dan senang belajar hal-hal baru. Situs ini adalah salah satu proyek awal saya, dibuat untuk menampilkan perjalanan dan apa yang sudah saya pelajari.</p>
+            <p>Halo! Saya QUHu-FER, seorang pelajar yang bersemangat dalam dunia teknologi dan pemrograman. Saya sedang dalam perjalanan untuk menguasai pengembangan web dan senang belajar hal-hal baru. Situs ini adalah salah satu proyek awal saya, dibuat untuk menampilkan perjalanan dan apa yang sudah saya pelajari.</p>
             <p>Saya percaya bahwa teknologi memiliki kekuatan untuk mengubah dunia, dan saya ingin menjadi bagian dari perubahan itu. Mari terhubung dan berkolaborasi!</p>
         </section>
 
@@ -291,34 +310,38 @@
                 <li class="skill-item">Git & GitHub</li>
                 <li class="skill-item">Web Design</li>
                 <li class="skill-item">Problem Solving</li>
+                <li class="skill-item">Research</li>
             </ul>
-            <a href="#" class="action-button">Lihat Lebih Banyak</a>
+            <a href="https://github.com/QUHu-FER" target="_blank" class="action-button">Lihat Profil GitHub Saya</a>
         </section>
 
         <section id="projects" class="section">
             <h2>Proyek</h2>
-            <p>Berikut adalah beberapa proyek kecil yang sedang atau sudah saya kerjakan:</p>
+            <p>Berikut adalah beberapa proyek kecil yang sedang atau sudah saya kerjakan. Anda bisa melihatnya di repositori GitHub saya:</p>
             <ul>
-                <li>**[Nama Proyek 1]:** Deskripsi singkat tentang proyek ini.</li>
-                <li>**[Nama Proyek 2]:** Deskripsi singkat tentang proyek ini.</li>
-                <li>**[Nama Proyek 3]:** Deskripsi singkat tentang proyek ini.</li>
+                <li>**[Nama Proyek Anda 1]:** Deskripsi singkat tentang proyek ini.</li>
+                <li>**[Nama Proyek Anda 2]:** Deskripsi singkat tentang proyek ini.</li>
+                <li>**[Nama Proyek Anda 3]:** Deskripsi singkat tentang proyek ini.</li>
             </ul>
-            <a href="https://github.com/[username_github_anda]?tab=repositories" target="_blank" class="action-button">Kunjungi GitHub Saya</a>
+            <a href="https://github.com/QUHu-FER?tab=repositories" target="_blank" class="action-button">Kunjungi Semua Repositori Saya</a>
         </section>
 
         <section id="contact" class="section">
             <h2>Kontak</h2>
             <p>Tertarik untuk berkolaborasi atau sekadar menyapa? Jangan ragu untuk menghubungi saya!</p>
-            <p>Email: <a href="mailto:emailanda@example.com" class="action-button">Kirim Email</a></p>
+            <p>Email: <a href="mailto:agenk000@gmail.com" class="action-button">Kirim Email ke agenk000@gmail.com</a></p>
             <p>Atau temukan saya di media sosial:</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/[username_linkedin]" target="_blank" title="LinkedIn">
+                <a href="https://github.com/QUHu-FER" target="_blank" title="GitHub">
+                    <img src="https://img.icons8.com/ios-filled/50/f0f0f0/github.png" alt="GitHub">
+                </a>
+                <a href="#" target="_blank" title="LinkedIn">
                     <img src="https://img.icons8.com/ios-filled/50/f0f0f0/linkedin.png" alt="LinkedIn">
                 </a>
-                <a href="https://twitter.com/[username_twitter]" target="_blank" title="Twitter">
+                <a href="#" target="_blank" title="Twitter">
                     <img src="https://img.icons8.com/ios-filled/50/f0f0f0/twitterx.png" alt="Twitter">
                 </a>
-                <a href="https://instagram.com/[username_instagram]" target="_blank" title="Instagram">
+                <a href="#" target="_blank" title="Instagram">
                     <img src="https://img.icons8.com/ios-filled/50/f0f0f0/instagram-new--v1.png" alt="Instagram">
                 </a>
             </div>
@@ -327,7 +350,7 @@
 
     <footer>
         <div class="container">
-            <p>Dibuat dengan ❤️ oleh [Nama Anda] &copy; 2025.</p>
+            <p>Dibuat dengan ❤️ oleh QUHu-FER &copy; 2025.</p>
         </div>
     </footer>
 
@@ -365,24 +388,11 @@
             });
         });
 
-        // Ganti placeholder dengan data Anda
+        // Bagian ini sudah diisi secara langsung di HTML untuk data yang spesifik
         document.addEventListener('DOMContentLoaded', () => {
-            // Ganti ini dengan nama dan bidang Anda
-            document.querySelector('header h1').textContent = '[Nama Lengkap Anda]';
-            document.querySelector('header p').textContent = 'Seorang [Bidang Anda, misal: Pengembang Web Pemula] yang Antusias';
-            document.querySelector('footer p').textContent = 'Dibuat dengan ❤️ oleh [Nama Anda] © 2025.';
-
-            // Ganti URL GitHub dan email Anda
-            document.querySelector('.action-button[href*="github.com"]').href = 'https://github.com/[username_github_anda]?tab=repositories';
-            document.querySelector('.action-button[href*="mailto"]').href = 'mailto:[email_anda]@example.com';
-
-            // Ganti URL media sosial Anda
-            document.querySelector('.social-links a[title="LinkedIn"]').href = 'https://linkedin.com/in/[username_linkedin]';
-            document.querySelector('.social-links a[title="Twitter"]').href = 'https://twitter.com/[username_twitter]';
-            document.querySelector('.social-links a[title="Instagram"]').href = 'https://instagram.com/[username_instagram]';
-
-            // Ganti URL gambar profil jika ada
-            // document.querySelector('.profile-img').src = 'URL_GAMBAR_PROFIL_ANDA.jpg';
+            // Jika Anda ingin mengubah teks dinamis lainnya, bisa ditambahkan di sini.
+            // Contoh: Mengubah tahun di footer secara otomatis (jika diinginkan)
+            // document.querySelector('footer p').textContent = `Dibuat dengan ❤️ oleh QUHu-FER © ${new Date().getFullYear()}.`;
         });
 
     </script>
